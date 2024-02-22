@@ -3,7 +3,7 @@ const appsData = [
     {
         name: 'SVCE-live bus tracking',
         imageUrl: 'app1.png',
-        downloadLink: 'https://onedrive.live.com/download?resid=3B45E35DFCA6141B%21129&authkey=!AHfF0HAzXeemx9k'
+        downloadLink: 'https://onedrive.live.com/download?resid=3B45E35DFCA6141B%21107&authkey=!AGXmHSlkZskZ30Y'
     },
     
     // Add more app entries as needed

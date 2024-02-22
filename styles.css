@@ -29,8 +29,8 @@ header img {
     border-radius: 10px;
     overflow: hidden;
     margin: 15px;
-    width: 300px; /* Set a fixed width for the app card */
-    height: 400px; /* Set a fixed height for the app card */
+    width: 400px; /* Set a fixed width for the app card */
+    height: 500px; /* Set a fixed height for the app card */
     background-color: white;
     transition: transform 0.3s ease-in-out;
 }
@@ -98,6 +98,6 @@ header img {
 /* Media query for mobile view */
 @media (max-width: 768px) {
     .app-card {
-        width: calc(50% - 10px); /* Adjust width for two apps in a row on smaller screens */
+        width: calc(60% - 20px); /* Adjust width for two apps in a row on smaller screens */
     }
 }

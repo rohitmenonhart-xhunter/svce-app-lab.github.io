@@ -1,0 +1,103 @@
+body {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e8f4f7; /* Set a background color for the body */
+}
+
+header {
+    background-color: #4db5fa;
+    text-align: center;
+    padding: 5px;
+    border-radius: 190px; /* Set a border-radius for rounded corners */
+}
+
+header img {
+    width: 80%; /* Set a percentage width for dynamic resizing */
+    max-width: 500px; /* Set a maximum width to avoid excessive stretching */
+}
+
+.app-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.app-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px;
+    width: 300px; /* Set a fixed width for the app card */
+    height: 400px; /* Set a fixed height for the app card */
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.app-card:hover {
+    transform: scale(1.05);
+}
+
+.app-card img {
+    width: 100%;
+    height: 250px; /* Set a fixed height for the app icon */
+    object-fit: cover;
+}
+
+.app-details {
+    padding: 15px;
+    height: 250px; /* Adjusted to fit the remaining height */
+}
+
+.app-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.app-description {
+    flex-grow: 1;
+}
+
+.download-btn {
+    background-color: #4db5fa;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.download-btn:hover {
+    background-color: #27ae60; /* Change background color on hover */
+}
+
+/* Download animation */
+@keyframes downloadAnimation {
+    0% {
+        transform: scale(1);
+        background-color: #9c1616;
+    }
+    50% {
+        transform: scale(0.9);
+        background-color: #13b657;
+    }
+    100% {
+        transform: scale(1);
+        background-color: #219bb1;
+    }
+}
+
+.downloading {
+    animation: downloadAnimation 1.5s ease infinite;
+}
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+    .app-card {
+        width: calc(50% - 30px); /* Adjust width for two apps in a row on smaller screens */
+    }
+}

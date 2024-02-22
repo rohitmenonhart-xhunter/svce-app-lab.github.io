@@ -14,7 +14,7 @@ header {
 
 header img {
     width: 80%; /* Set a percentage width for dynamic resizing */
-    max-width: 500px; /* Set a maximum width to avoid excessive stretching */
+    max-width: 400px; /* Set a maximum width to avoid excessive stretching */
 }
 
 .app-list {

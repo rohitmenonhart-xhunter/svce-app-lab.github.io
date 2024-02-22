@@ -9,12 +9,12 @@ header {
     background-color: #4db5fa;
     text-align: center;
     padding: 15px; /* Increase padding for better visual balance */
-    border-radius: 15px; /* Set a border-radius for rounded corners */
+    border-radius: 70px; /* Set a border-radius for rounded corners */
 }
 
 header img {
     width: 80%; /* Set a percentage width for dynamic resizing */
-    max-width: 400px; /* Set a maximum width to avoid excessive stretching */
+    max-width: 500px; /* Set a maximum width to avoid excessive stretching */
 }
 
 .app-list {

@@ -98,6 +98,6 @@ header img {
 /* Media query for mobile view */
 @media (max-width: 768px) {
     .app-card {
-        width: calc(50% - 60px); /* Adjust width for two apps in a row on smaller screens */
+        width: calc(50% - 10px); /* Adjust width for two apps in a row on smaller screens */
     }
 }

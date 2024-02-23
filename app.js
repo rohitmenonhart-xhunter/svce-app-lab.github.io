@@ -3,46 +3,55 @@ const appsData = [
     {
         name: 'SVCE-live bus tracking',
         imageUrl: 'app1.png',
-        downloadLink: 'https://onedrive.live.com/download?resid=3B45E35DFCA6141B%21107&authkey=!AGXmHSlkZskZ30Y'
+        downloadLink: 'https://onedrive.live.com/download?resid=3B45E35DFCA6141B%21129&authkey=!AHfF0HAzXeemx9k',
+        description: 'This app shows live bus tracking for SVCE campus.'
     },
     
     // Add more app entries as needed
 ];
 
 // Function to display apps
+const downloadBtn = document.getElementById('download-btn');
+const appSearchInput = document.getElementById('app-search');
+const appList = document.getElementById('all-apps');
+
+// Function to display apps
 function displayApps() {
-    const appList = document.getElementById('all-apps');
+    appList.innerHTML = ''; // Clear the app list before displaying filtered apps
 
-    appsData.forEach((appData) => {
-        // Create a card for each app
-        const appCard = document.createElement('div');
-        appCard.className = 'app-card';
+    const searchTerm = appSearchInput.value.toLowerCase();
 
-        // Display app details
-        appCard.innerHTML = `
-            <img src="${appData.imageUrl}" alt="${appData.name}">
-            <div class="app-details">
-                <h3>${appData.name}</h3>
-                <a class="download-btn" href="${appData.downloadLink}" target="_blank">Download</a>
-            </div>
-        `;
+    const matchingApps = appsData.filter((appData) =>
+        appData.name.toLowerCase().includes(searchTerm) ||
+        appData.description.toLowerCase().includes(searchTerm)
+    );
 
-        appList.appendChild(appCard);
+    if (matchingApps.length > 0) {
+        matchingApps.forEach((appData) => {
+            // Create a card for each matching app
+            const appCard = document.createElement('div');
+            appCard.className = 'app-card';
 
-        // Add download animation on button click
-        const downloadBtn = appCard.querySelector('.download-btn');
-        downloadBtn.addEventListener('click', function() {
-            // Add the 'downloading' class to trigger the animation
-            downloadBtn.classList.add('downloading');
+            // Display app details
+            appCard.innerHTML = `
+                <img src="${appData.imageUrl}" alt="${appData.name}">
+                <div class="app-details">
+                    <h3 class="app-title">${appData.name}</h3>
+                    <p class="app-description">${appData.description}</p>
+                    <a class="download-btn" href="${appData.downloadLink}" target="_blank">Download</a>
+                </div>
+            `;
 
-            // Simulate a delay for the download process
-            setTimeout(function() {
-                // Remove the 'downloading' class after the delay
-                downloadBtn.classList.remove('downloading');
-            }, 1500); // Adjust the time to match the animation duration
+            appList.appendChild(appCard);
         });
-    });
+    } else {
+        // Display a message if no matching apps are found
+        appList.innerHTML = '<p>No matching apps found.</p>';
+    }
 }
 
 // Initial call to display apps
 displayApps();
+
+// Add an event listener for the input to handle real-time filtering
+appSearchInput.addEventListener('input', displayApps);
